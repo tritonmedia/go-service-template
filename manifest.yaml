@@ -1,0 +1,14 @@
+name: go
+dependencies: []
+arguments:
+  module:
+    required: true
+    description: Go module path
+  type:
+    required: true
+    description: Type of service this Go application is.
+    type: list
+    values:
+    - grpc
+    - http
+
