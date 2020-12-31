@@ -1,3 +1,5 @@
+{{- if writeIf "type" "jobprocessor" }}
+{{- end }}
 package {{ mustRegexReplaceAll "([^A-Za-z])+" .manifest.Name "" }}
 
 import (
