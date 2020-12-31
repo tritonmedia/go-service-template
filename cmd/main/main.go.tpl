@@ -1,3 +1,4 @@
+{{- if setOutputName (printf "cmd/%s/%s.go" .manifest.Name .manifest.Name) }}{{- end }}
 package main
 
 import (

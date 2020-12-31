@@ -26,7 +26,7 @@ func NewGRPCService() *GRPCService {
 
 // Run starts a grpc server with the internal server handler
 func (g *GRPCService) Run(ctx context.Context, log logrus.FieldLogger) error {
-	listAddr := "127.0.0.1:" + strconv.Itoa(8000)
+	listAddr := "0.0.0.0:" + strconv.Itoa(8000)
 	l, err := net.Listen("tcp", listAddr)
 	if err != nil {
 		return err
