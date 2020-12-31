@@ -1,5 +1,5 @@
 {{- if writeIf "type" "grpc" }}{{- end }}
-package {{ mustRegexReplaceAll "([^A-Za-z])+" .manifest.Name "" }}
+package grpc
 
 import (
 	"context"

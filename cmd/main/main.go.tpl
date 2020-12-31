@@ -53,8 +53,8 @@ func main() {
 		// start the service runner, which handles context cancellation
 		// and threading
 		r := service.NewServiceRunner(ctx, []service.Service{
-			{{- if argEq "type" "JobProcessor" }}
-			api.NewGRPCService(),
+			{{- if argEq "type" "grpc" }}
+			grpc.NewGRPCService(),
 			{{- end }}
 		})
 		sigC := make(chan os.Signal)
