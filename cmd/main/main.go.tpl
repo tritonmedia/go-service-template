@@ -52,9 +52,7 @@ func main() {
 		// start the service runner, which handles context cancellation
 		// and threading
 		r := service.NewServiceRunner(ctx, []service.Service{
-			{{- if eq (toString .manifest.Type) "JobProcessor" }}
-			&{{ .manifest.Name }}.ConsumerService{},
-			{{- else if eq (toString .manifest.Type)  "GRPC" }}
+			{{- if argEq "type" "JobProcessor" }}
 			api.NewGRPCService(),
 			{{- end }}
 		})

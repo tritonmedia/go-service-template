@@ -21,7 +21,7 @@ RUN --mount=type=cache,target=/go-build-cache --mount=type=cache,target=/go/pkg 
 
 FROM alpine:3.12
 ENTRYPOINT ["/usr/bin/{{ .manifest.Name }}"]
-{{- if eq (toString .manifest.Type) "GRPC" }}
+{{- if argEq "type" "GRPC" }}
 CMD ["server"]
 {{- end }}
 
