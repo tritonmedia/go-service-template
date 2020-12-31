@@ -1,3 +1,4 @@
+{{- static }}
 module github.com/tritonmedia/{{ .manifest.Name }}
 
 go 1.15
