@@ -1,4 +1,4 @@
-package {{ .manifest.Name }}
+package {{ mustRegexReplaceAll "([^A-Za-z])+" .manifest.Name "" }}
 
 import (
 	"context"
@@ -10,7 +10,7 @@ import (
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"
 
-	apiv1 "github.com/tritonmedia/{{ .manifest.Name }}/api/v1"
+	apiv1 "{{ .manifest.Arguments.org }}/{{ .manifest.Name }}/api/v1"
 )
 
 type GRPCService struct {

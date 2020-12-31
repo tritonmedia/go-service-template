@@ -11,7 +11,7 @@ GOFLAGS        :=
 GO_EXTRA_FLAGS := -v
 TAGS           :=
 BINDIR         := $(CURDIR)/bin
-PKGDIR         := github.com/tritonmedia/{{ .manifest.Name }}
+PKGDIR         := {{ .manifest.Arguments.org }}/{{ .manifest.Name }}
 CGO_ENABLED    := 1
 BENCH_FLAGS    := "-bench=Bench $(BENCH_FLAGS)"
 TEST_TAGS      ?= tm_test
@@ -53,7 +53,7 @@ gobuild:
 .PHONY: docker-build-push
 docker-build-push:
 	@$(LOG) info "Building and push docker image"
-	docker buildx build --platform amd64,arm64 -t "tritonmedia/{{ .manifest.Name }}:$(APP_VERSION)" --push .
+	docker buildx build --platform amd64,arm64 -t "{{ base (dir .manifest.Arguments.org) }}/{{ .manifest.Name }}:$(APP_VERSION)" --push .
 
 .PHONY: fmt
 fmt:

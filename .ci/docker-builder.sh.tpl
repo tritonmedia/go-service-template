@@ -21,7 +21,7 @@ fi
 
 appName="$(basename "$(pwd)")"
 VERSION="$(make version)"
-remote_image_name="docker.io/tritonmedia/$appName"
+remote_image_name="docker.io/{{ base (dir .manifest.Arguments.org) }}/$appName"
 
 if [[ -z $IMAGE_PUSH_SECRET ]]; then
   # Why: We're literally having it be escaped.

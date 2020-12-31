@@ -1,9 +1,7 @@
 {{- static }}
-module github.com/tritonmedia/{{ .manifest.Name }}
+module {{ .manifest.Arguments.org }}/{{ .manifest.Name }}
 
 go 1.15
-
-replace github.com/tritonmedia/pkg => ../pkg
 
 require (
 	github.com/google/uuid v1.1.2

@@ -1,14 +1,13 @@
 name: go
 dependencies: []
 arguments:
-  module:
+  org:
     required: true
-    description: Go module path
+    description: Git Service Organization, generally $(dirname) Go module path
   type:
     required: true
     description: Type of service this Go application is.
     type: list
     values:
-    - grpc
-    - http
-
+      - grpc
+      - http

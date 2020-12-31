@@ -1,4 +1,4 @@
-package {{ .manifest.Name }}
+package {{ mustRegexReplaceAll "([^A-Za-z])+" .manifest.Name "" }}
 
 import (
 	"context"
@@ -8,8 +8,8 @@ import (
 	"github.com/pkg/errors"
 	"github.com/sirupsen/logrus"
 
-	apiv1 "github.com/tritonmedia/{{ .manifest.Name }}/api/v1"
-	"github.com/tritonmedia/{{ .manifest.Name }}/internal/ent"
+	apiv1 "{{ .manifest.Arguments.org }}/{{ .manifest.Name }}/api/v1"
+	"{{ .manifest.Arguments.org }}/{{ .manifest.Name }}/internal/ent"
 
 	///StartBlock(imports)
 	{{- if .imports }}

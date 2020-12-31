@@ -1,4 +1,4 @@
-package {{ .manifest.Name }}
+package {{ mustRegexReplaceAll "([^A-Za-z])+" .manifest.Name "" }}
 
 import (
 	"context"
