@@ -15,8 +15,7 @@ import (
 	"github.com/tritonmedia/pkg/service"
 	"github.com/urfave/cli/v2"
 
-	"{{ .manifest.Arguments.org }}/{{ .manifest.Name }}/internal/converter"
-	"{{ .manifest.Arguments.org }}/{{ .manifest.Name }}/internal/api"
+	"{{ .manifest.Arguments.org }}/{{ .manifest.Name }}/internal/grpc"
 )
 
 func main() {
