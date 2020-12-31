@@ -1,4 +1,5 @@
-{{- static -}}
+{{- if static }}
+{{- end }}
 module {{ .manifest.Arguments.org }}/{{ .manifest.Name }}
 
 go 1.15
