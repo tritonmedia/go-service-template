@@ -1,4 +1,5 @@
-{{- if setOutputName (printf "cmd/%s/%s.go" .manifest.Name .manifest.Name) }}{{- end }}
+{{ $name := mustRegexReplaceAll "([^A-Za-z])+" .manifest.Name "" }}
+{{- if setOutputName (printf "cmd/%s/%s.go" $name $name) }}{{- end }}
 package main
 
 import (
